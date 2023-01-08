@@ -1,0 +1,20 @@
+.projectWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.basicInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featuredImageWrapper {
+  width: calc(100% / 3 * 2);
+}
+
+.featuredImageContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
