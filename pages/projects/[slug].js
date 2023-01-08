@@ -1,29 +1,47 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { getClient } from "../../server/sanity.server";
+
 import Loader from "../../components/Loader";
-export default function project() {
-  const router = useRouter();
-  const { slug } = router.query;
+import { queryAllPosts } from "../../server/sanity.queries";
 
-  const [projectData, setProjectData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // load Single Project Data
-
-    setIsLoading(false);
-  }, []);
-
-  if (isLoading) {
-    return <Loader />;
-  }
-
+function Project({ project }) {
+  const { title, stills, trailer } = project;
   return (
     <>
-      <h1>Single Project</h1>
-      <h1>{slug}</h1>
+      <h1>{title}</h1>
       <Link href="/">Home</Link>
     </>
   );
 }
+
+export async function getStaticPaths() {
+  const res = await getClient.fetch(queryAllPosts);
+
+  const paths = res.map((item) => {
+    return {
+      params: { slug: item.slug.current },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  const slug = context.params.slug;
+  const project = await getClient.fetch(
+    `*[_type == "projects" && slug.current == "${slug}"]`
+  );
+
+  return {
+    props: {
+      project: project[0],
+    },
+  };
+}
+
+export default Project;

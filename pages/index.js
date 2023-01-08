@@ -3,12 +3,15 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 
-import Navbar from "../components/Navbar";
-import Projectlist from "../components/Home/Projectlist";
+import Projectlist from "../components/Projectlist";
+import { getClient } from "../server/sanity.server";
+import { queryAllPosts } from "../server/sanity.queries";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+function Home({ projects }) {
+  console.log(projects);
+
   return (
     <>
       <Head>
@@ -17,18 +20,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <Projectlist />
+        <Projectlist projects={projects} />
       </main>
     </>
   );
 }
+
+export async function getStaticProps() {
+  const projects = await getClient.fetch(queryAllPosts);
+  return {
+    props: {
+      projects,
+    },
+  };
+}
+
+export default Home;
