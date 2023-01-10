@@ -1,0 +1,3 @@
+.projectlist article:not(:last-of-type) {
+  border-bottom: var(--line-weight) solid var(--color-text);
+}

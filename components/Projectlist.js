@@ -4,15 +4,11 @@ import ProjectlistItem from "./ProjectlistItem";
 
 function Projectlist({ projects }) {
   return (
-    <section>
+    <section className={styles.projectlist}>
       <h1>Work</h1>
       <hr />
-      {projects.map((item) => {
-        return (
-          <div key={item._id}>
-            <ProjectlistItem data={item} />
-          </div>
-        );
+      {projects.map((item, index) => {
+        return <ProjectlistItem data={item} key={item._id} index={index} />;
       })}
     </section>
   );

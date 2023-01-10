@@ -3,31 +3,48 @@ import styles from "./ProjectlistItem.module.css";
 import { urlFor } from "../server/sanity.server";
 import Link from "next/link";
 import Synopsis from "./Synopsis";
+import { toPlainText } from "@portabletext/react";
 
-function ProjectlistItem({ data }) {
+function ProjectlistItem({ data, index }) {
   const { title, featuredImage, synopsis, slug } = data;
+
+  index = index < 10 ? `0${index + 1}` : index + 1;
 
   return (
     <article className={styles.projectWrapper}>
       <section className={styles.basicInfoWrapper}>
-        <div>
-          <div>{title}</div>
-          {synopsis && <Synopsis synopsis={synopsis} />}
+        <div className={styles.basicInfo}>
+          <section>
+            <h2 className={styles.title}>
+              <span className={styles.index}>{index}</span>{" "}
+              <Link href={`/projects/${slug.current}`}>{title}</Link>
+            </h2>
+          </section>
+          {synopsis && (
+            <section className={styles.synopsis}>
+              {`${toPlainText(synopsis).slice(0, 150)} ...`}
+              {/* <Synopsis synopsis={synopsis} /> */}
+            </section>
+          )}
         </div>
 
         <footer>
-          <Link href={`/projects/${slug.current}`}>Info</Link>
+          <Link href={`/projects/${slug.current}`} className="h2 btn">
+            Info
+          </Link>
         </footer>
       </section>
 
       <section className={styles.featuredImageWrapper}>
         <div className={styles.featuredImageContainer}>
-          <Image
-            src={urlFor(featuredImage).url()}
-            alt=""
-            layout="fill"
-            objectFit="cover"
-          />
+          <Link href={`/projects/${slug.current}`}>
+            <Image
+              src={urlFor(featuredImage).url()}
+              alt=""
+              layout="fill"
+              objectFit="cover"
+            />
+          </Link>
         </div>
       </section>
     </article>
