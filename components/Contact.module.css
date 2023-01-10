@@ -1,0 +1,17 @@
+.contactWrapper {
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.linksWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.links {
+  display: flex;
+  gap: var(--spacer-m);
+}
