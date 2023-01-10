@@ -1,11 +1,11 @@
 .nav {
-  color: red;
   display: flex;
   justify-content: space-between;
+  padding: var(--spacer-s) 0;
 }
 
 .linkWrapper {
   display: flex;
-  gap: var(--spacer);
+  gap: var(--spacer-s);
   list-style: none;
 }
