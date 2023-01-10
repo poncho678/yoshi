@@ -46,11 +46,11 @@ function Project({ project }) {
         )}
       </section>
       {trailer && <ReactPlayer url={trailer} controls={true} />}
-      {synopsis.length > 0 && (
+      {/* {synopsis.length > 0 && (
         <section>
           <Synopsis synopsis={synopsis} />
         </section>
-      )}
+      )} */}
       {stills.length > 0 && <Stills stills={stills} />}
     </main>
   );
