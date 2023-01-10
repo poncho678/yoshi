@@ -1,0 +1,7 @@
+.main > section:not(:first-of-type) {
+  padding-top: var(--spacer-xl);
+  padding-bottom: var(--spacer-m);
+}
+
+.main > section:last-of-type {
+}
