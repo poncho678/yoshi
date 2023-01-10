@@ -38,6 +38,7 @@ export async function getStaticProps() {
     props: {
       projects,
       infos: infos[0],
+      revalitdate: 60 * 5,
     },
   };
 }
