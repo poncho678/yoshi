@@ -5,13 +5,13 @@ import styles from "../styles/Home.module.css";
 
 import Projectlist from "../components/Projectlist";
 import { getClient } from "../server/sanity.server";
-import { queryAllPosts } from "../server/sanity.queries";
+import { queryAllPosts, queryInfos } from "../server/sanity.queries";
+import Contact from "../components/Contact";
+import Biography from "../components/Biography";
 
 const inter = Inter({ subsets: ["latin"] });
 
-function Home({ projects }) {
-  console.log(projects);
-
+function Home({ projects, infos }) {
   return (
     <>
       <Head>
@@ -22,7 +22,9 @@ function Home({ projects }) {
       </Head>
 
       <main className={styles.main}>
+        <Biography biography={infos} />
         <Projectlist projects={projects} />
+        <Contact infos={infos} />
       </main>
     </>
   );
@@ -30,9 +32,12 @@ function Home({ projects }) {
 
 export async function getStaticProps() {
   const projects = await getClient.fetch(queryAllPosts);
+  const infos = await getClient.fetch(queryInfos);
+
   return {
     props: {
       projects,
+      infos: infos[0],
     },
   };
 }
