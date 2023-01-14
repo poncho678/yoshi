@@ -2,9 +2,10 @@
   --border-radius: 12px;
   --typeface: Helvetica, sans-serif;
 
-  --spacer-s: 1rem;
-  --spacer-m: 1.5rem;
-  --spacer-l: 2rem;
+  --spacer-xs: 1rem;
+  --spacer-s: 2rem;
+  --spacer-m: 2vw;
+  --spacer-l: 3vw;
   --spacer-xl: 4rem;
 
   --font-size-xs: 0.75rem;
