@@ -1,12 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
-import { getClient, urlFor } from "../../server/sanity.server";
+import { getClient } from "../../server/sanity.server";
 
 import Loader from "../../components/Loader";
 import { queryAllPosts, querySinglePost } from "../../server/sanity.queries";
 import dynamic from "next/dynamic";
 import Synopsis from "../../components/Synopsis";
 import Stills from "../../components/singleProject/Stills";
+import SingleProjectImage from "../../components/singleProject/SingleProjectImage";
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 function Project({ project }) {
@@ -25,7 +25,6 @@ function Project({ project }) {
   } = project;
 
   console.log(project);
-  console.log(stills);
 
   return (
     <main>
@@ -33,18 +32,7 @@ function Project({ project }) {
         {title && <h1>{title}</h1>}
         {client && <h3>{client}</h3>}
       </header>
-      <section>
-        {poster && (
-          <Image
-            src={urlFor(poster).url()}
-            alt=""
-            width="0"
-            height="0"
-            sizes="100vw"
-            style={{ width: "100%", height: "auto" }}
-          />
-        )}
-      </section>
+      <section>{poster && <SingleProjectImage image={poster} />}</section>
       {trailer && <ReactPlayer url={trailer} controls={true} />}
       {synopsis.length > 0 && (
         <section>
