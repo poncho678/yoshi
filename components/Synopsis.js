@@ -1,14 +1,16 @@
 import styles from "./Synopsis.module.css";
 import { PortableText } from "@portabletext/react";
 
-function Synopsis({ synopsis }) {
-  if (!synopsis) {
-    return;
-  }
+function Synopsis({ synopsis = [] }) {
+  console.log("synopsis", synopsis);
   return (
-    <article className={styles.synopsis}>
-      <PortableText value={synopsis} />
-    </article>
+    <>
+      {synopsis.length > 0 && (
+        <article className={styles.synopsis}>
+          <PortableText value={synopsis} />
+        </article>
+      )}
+    </>
   );
 }
 

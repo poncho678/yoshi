@@ -22,8 +22,7 @@ function ProjectlistItem({ data, index }) {
           </section>
           {synopsis && (
             <section className={styles.synopsis}>
-              {`${toPlainText(synopsis).slice(0, 150)} ...`}
-              {/* <Synopsis synopsis={synopsis} /> */}
+              <Synopsis synopsis={synopsis} />
             </section>
           )}
         </div>
