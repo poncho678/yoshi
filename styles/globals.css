@@ -104,6 +104,13 @@ h5,
 .text-xs {
 }
 
+.text-xs,
+.text-s,
+.text-m,
+.text-l {
+  white-space: pre-line;
+}
+
 hr {
   border-width: var(--line-weight);
   border-top-width: 0;
