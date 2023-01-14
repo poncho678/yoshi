@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: var(--spacer-s) 0;
+  padding: var(--spacer-m) 0;
 }
 
 .linkWrapper {
