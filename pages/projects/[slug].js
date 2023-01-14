@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getClient, urlFor } from "../../server/sanity.server";
 
 import Loader from "../../components/Loader";
-import { queryAllPosts } from "../../server/sanity.queries";
+import { queryAllPosts, querySinglePost } from "../../server/sanity.queries";
 import dynamic from "next/dynamic";
 import Synopsis from "../../components/Synopsis";
 import Stills from "../../components/singleProject/Stills";
@@ -46,11 +46,11 @@ function Project({ project }) {
         )}
       </section>
       {trailer && <ReactPlayer url={trailer} controls={true} />}
-      {/* {synopsis.length > 0 && (
+      {synopsis.length > 0 && (
         <section>
           <Synopsis synopsis={synopsis} />
         </section>
-      )} */}
+      )}
       {stills.length > 0 && <Stills stills={stills} />}
     </main>
   );
@@ -73,9 +73,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const slug = context.params.slug;
-  const project = await getClient.fetch(
-    `*[_type == "projects" && slug.current == "${slug}"]`
-  );
+  const project = await getClient.fetch(querySinglePost(slug));
 
   return {
     props: {
