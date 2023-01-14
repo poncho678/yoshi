@@ -2,7 +2,6 @@ import Image from "next/image";
 import { urlFor } from "../../server/sanity.server";
 
 function SingleProjectImage({ image }) {
-  console.log("image", image);
   return (
     <Image
       src={urlFor(image).url()}
