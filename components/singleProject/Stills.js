@@ -1,22 +1,15 @@
-import Image from "next/image";
-import { urlFor } from "../../server/sanity.server";
+import SingleProjectImage from "./SingleProjectImage";
 import styles from "./Stills.module.css";
 
-function Stills({ stills }) {
+function Stills({ stills = [] }) {
+  if (stills.length === 0) {
+    return;
+  }
+
   return (
     <section className={styles.stillsWrapper}>
       {stills.map((still) => {
-        return (
-          <Image
-            src={urlFor(still).url()}
-            alt={still._key}
-            key={still._key}
-            width="0"
-            height="0"
-            sizes="100vw"
-            style={{ width: "100%", height: "auto" }}
-          />
-        );
+        return <SingleProjectImage key={still._key} image={still} />;
       })}
     </section>
   );
