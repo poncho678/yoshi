@@ -28,7 +28,6 @@ function Project({ project, infos }) {
     stills = [],
     additionalFields = [],
   } = project;
-
   return (
     <>
       <Head>
@@ -49,7 +48,7 @@ function Project({ project, infos }) {
             <Synopsis synopsis={synopsis} />
           </section>
         )}
-        {stills.length > 0 && <Stills stills={stills} />}
+        {stills !== null && stills.length > 0 && <Stills stills={stills} />}
       </main>
     </>
   );
