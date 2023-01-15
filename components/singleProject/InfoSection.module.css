@@ -4,6 +4,11 @@
   grid-auto-flow: dense;
   gap: var(--spacer-m);
 }
+@media (min-width: 1024px) {
+  .infoSection {
+    grid-template-columns: repeat(8, minmax(125px, 1fr));
+  }
+}
 
 .posterWrapper {
   grid-column: span 2;
@@ -14,12 +19,12 @@
 }
 
 .itemWrapper {
-  grid-column: span 2;
+  grid-column: span 3;
   align-self: flex-start;
   border-top: var(--line-weight) solid var(--color-text);
   padding: var(--spacer-s) 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: var(--spacer-s);
 }
 

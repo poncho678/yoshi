@@ -44,7 +44,7 @@ function Project({ project, infos }) {
         <header>{title && <h1>{title}</h1>}</header>
         <InfoSection project={project} />
         {trailer && <ReactPlayer url={trailer} controls={true} />}
-        {synopsis.length > 0 && (
+        {synopsis !== null && synopsis.length > 0 && (
           <section>
             <Synopsis synopsis={synopsis} />
           </section>
