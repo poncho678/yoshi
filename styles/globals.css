@@ -3,22 +3,42 @@
   --typeface: Helvetica, sans-serif;
 
   --spacer-xs: 1rem;
-  --spacer-s: 2rem;
-  --spacer-m: 2vw;
+  --spacer-s: calc(0.5rem + 0.25vw);
+  --spacer-m: calc(0.5rem + 1vw);
   --spacer-l: 3vw;
-  --spacer-xl: 4rem;
+  --spacer-xl: calc(3rem + 3vw);
 
   --font-size-xs: 0.75rem;
-  --font-size-s: 1rem;
-  --font-size-m: 2rem;
-  --font-size-l: 3rem;
-  --font-size-xl: 7rem;
+  --font-size-s: calc(0.75rem + 0.35vw);
+  --font-size-m: calc(1rem + 1.5vw);
+  --font-size-l: calc(1rem + 1.5vw);
+  --font-size-xl: calc(1rem + 9vw);
 
-  --indent: 6rem;
+  --indent: calc(1rem + 3vw);
   --line-weight: 0.5px;
 
   --color-text: #000000;
+  --color-link: 0, 0, 255;
   --color-background: 255, 255, 255;
+}
+@media (min-width: 576px) {
+  :root {
+    --font-size-s: calc(0.75rem + 0.25vw);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --spacer-m: calc(1rem + 0.5vw);
+    --spacer-xl: calc(3rem + 4vw);
+
+    --font-size-l: calc(1rem + 2vw);
+  }
+}
+@media (min-width: 1280px) {
+  :root {
+    --font-size-l: calc(1rem + 1.75vw);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,12 +52,15 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   font-family: var(--typeface);
   font-size: 14px;
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {
@@ -79,12 +102,18 @@ h1,
 .h1 {
   font-size: var(--font-size-xl);
   line-height: 1;
+  padding-bottom: 0.125em;
 }
 
 h2,
 .h2,
 .text-l {
   font-size: var(--font-size-l);
+  line-height: 1.1;
+}
+
+h2 {
+  text-transform: uppercase;
 }
 
 h3,
@@ -111,6 +140,10 @@ h5,
   white-space: pre-line;
 }
 
+p {
+  text-indent: var(--indent);
+}
+
 hr {
   border-width: var(--line-weight);
   border-top-width: 0;
@@ -119,6 +152,7 @@ hr {
 
 .btn {
   position: relative;
+  transition: color 0.6s ease;
 }
 
 .btn::before {
@@ -126,15 +160,21 @@ hr {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 0;
+  width: 100%;
+  opacity: 0;
   height: var(--line-weight);
-  background-color: var(--color-text);
-  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  background-color: rgb(var(--color-link));
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    color: rgb(var(--color-link));
+  }
+
   .btn:hover::before {
     left: 0;
+    opacity: 1;
     right: auto;
     width: 100%;
   }
