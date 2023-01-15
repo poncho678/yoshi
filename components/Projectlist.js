@@ -4,7 +4,7 @@ import ProjectlistItem from "./ProjectlistItem";
 
 function Projectlist({ projects }) {
   return (
-    <section className={styles.projectlist}>
+    <section id="work" className={styles.projectlist}>
       <h1>Work</h1>
       <hr />
       {projects.map((item, index) => {
