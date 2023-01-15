@@ -4,17 +4,33 @@ import styles from "./Navbar.module.css";
 
 function Navbar() {
   return (
-    <header>
-      <nav className={styles.nav}>
-        <Link href="/">Jascha Hannover</Link>
-        <ul className={styles.linkWrapper}>
-          <li>About</li>
-          <li>Work</li>
-          <li>Bio</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
-    </header>
+    <nav className={`text-s ${styles.nav}`}>
+      <section>
+        <Link className="btn" href="/">
+          Jascha Hannover
+        </Link>
+      </section>
+      <ul className={styles.linkWrapper}>
+        <li>
+          <Link className="btn" href="/">
+            About
+          </Link>
+        </li>
+        <li>
+          {" "}
+          <Link className="btn" href="/#work">
+            Work
+          </Link>
+        </li>
+        {/* <li>Bio</li> */}
+        <li>
+          {" "}
+          <Link className="btn" href="/#contact">
+            Contact
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
