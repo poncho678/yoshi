@@ -16,7 +16,7 @@ function ProjectlistItem({ data, index }) {
         <div className={styles.basicInfo}>
           <section>
             <h2 className={styles.title}>
-              <span className={styles.index}>{index}</span>{" "}
+              {/* <span className={styles.index}>{index}</span>{" "} */}
               <Link href={`/projects/${slug.current}`}>{title}</Link>
             </h2>
             <h4 className={styles.yearAndDate}>

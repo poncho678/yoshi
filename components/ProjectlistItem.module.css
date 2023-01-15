@@ -58,7 +58,7 @@
 }
 
 .title {
-  text-indent: var(--indent);
+  /* text-indent: var(--indent); */
   position: relative;
 }
 
