@@ -3,29 +3,34 @@
   grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
   grid-auto-flow: dense;
   gap: var(--spacer-m);
+  margin-top: var(--spacer-m);
 }
 @media (min-width: 1024px) {
   .infoSection {
-    grid-template-columns: repeat(8, minmax(125px, 1fr));
+    grid-template-columns: repeat(8, minmax(100px, 1fr));
   }
 }
 
 .posterWrapper {
   grid-column: span 2;
-  grid-row: 1 / span 20;
+  grid-row: 1 / span 8;
 }
 .posterWrapper img {
-  /* width: 50%; */
 }
 
 .itemWrapper {
-  grid-column: span 3;
+  grid-column: span 2;
   align-self: flex-start;
   border-top: var(--line-weight) solid var(--color-text);
   padding: var(--spacer-s) 0;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: var(--spacer-s);
+}
+@media (min-width: 920px) {
+  .itemWrapper {
+    grid-column: span 3;
+  }
 }
 
 .itemWrapper p {
