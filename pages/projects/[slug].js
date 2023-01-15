@@ -48,7 +48,7 @@ function Project({ project, infos }) {
             <Synopsis synopsis={synopsis} />
           </section>
         )}
-        {stills !== null && stills.length > 0 && <Stills stills={stills} />}
+        <Stills stills={stills} />
       </main>
     </>
   );

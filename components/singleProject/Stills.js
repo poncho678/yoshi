@@ -2,7 +2,7 @@ import SingleProjectImage from "./SingleProjectImage";
 import styles from "./Stills.module.css";
 
 function Stills({ stills = [] }) {
-  if (stills.length === 0) {
+  if (stills === null || stills.length === 0) {
     return;
   }
 
