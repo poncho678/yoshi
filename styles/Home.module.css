@@ -1,5 +1,5 @@
 .main > section:not(:first-of-type) {
-  padding-top: var(--spacer-xl);
+  margin-top: var(--spacer-xl);
   padding-bottom: var(--spacer-m);
 }
 
