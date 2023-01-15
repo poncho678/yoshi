@@ -1,8 +1,12 @@
 .contactWrapper {
-  min-height: 25vh;
+  min-height: calc(5rem + 15vw);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.contactWrapper h1 {
+  margin-top: var(--spacer-m);
 }
 
 .linksWrapper {
