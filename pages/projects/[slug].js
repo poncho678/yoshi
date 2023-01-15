@@ -1,33 +1,27 @@
-import { getClient } from "../../server/sanity.server";
 import Head from "next/head";
+import styles from "../../styles/SingleProject.module.css";
+import { getClient } from "../../server/sanity.server";
 import Loader from "../../components/Loader";
+
 import {
   queryAllPosts,
   queryInfos,
   querySinglePost,
 } from "../../server/sanity.queries";
-import dynamic from "next/dynamic";
 import Synopsis from "../../components/Synopsis";
 import Stills from "../../components/singleProject/Stills";
 import InfoSection from "../../components/singleProject/InfoSection";
-
-const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
+import Trailer from "../../components/singleProject/Trailer";
 
 function Project({ project, infos }) {
   const {
     title = "",
-    client = "",
-    poster = {},
-    runtime = "",
-    releaseDate = "",
-    worldSales = "",
-    team = [],
-    festivals = "",
+    featuredImage,
     synopsis = [],
     trailer = "",
     stills = [],
-    additionalFields = [],
   } = project;
+
   return (
     <>
       <Head>
@@ -42,9 +36,9 @@ function Project({ project, infos }) {
       <main>
         <header>{title && <h1>{title}</h1>}</header>
         <InfoSection project={project} />
-        {trailer && <ReactPlayer url={trailer} controls={true} />}
+        <Trailer trailer={trailer} poster={featuredImage} />
         {synopsis !== null && synopsis.length > 0 && (
-          <section>
+          <section className={`text-m ${styles.synopsis}`}>
             <Synopsis synopsis={synopsis} />
           </section>
         )}
