@@ -32,7 +32,7 @@ function Project({ project, infos }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className={styles.singleProject}>
         <header>{title && <h1>{title}</h1>}</header>
         <InfoSection project={project} />
         <Trailer trailer={trailer} poster={featuredImage} />

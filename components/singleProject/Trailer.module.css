@@ -3,7 +3,6 @@
   grid-template-columns: 1fr;
   max-width: 1024px;
   margin: 0 auto;
-  padding: var(--spacer-l) 0;
 }
 .videoWrapper {
   position: relative;

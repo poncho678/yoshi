@@ -1,0 +1,6 @@
+.singleProject > section:not(:first-of-type) {
+  padding: var(--spacer-l) 0 0 0;
+}
+.singleProject > section:last-of-type {
+  padding: var(--spacer-l) 0 var(--spacer-m) 0;
+}
