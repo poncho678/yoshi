@@ -48,12 +48,6 @@ function InfoSection({ project }) {
             <div className="text-s">{runtime}</div>
           </article>
         )}
-        {worldSales && (
-          <article className={styles.itemWrapper}>
-            <h4>World Sales</h4>
-            <div className="text-s">{worldSales}</div>
-          </article>
-        )}
         {team.length > 0 && (
           <article className={styles.itemWrapper}>
             <h4>Team</h4>
@@ -66,6 +60,12 @@ function InfoSection({ project }) {
           <article className={styles.itemWrapper}>
             <h4>Festivals</h4>
             <div className="text-s">{festivals}</div>
+          </article>
+        )}
+        {worldSales && (
+          <article className={styles.itemWrapper}>
+            <h4>World Sales</h4>
+            <div className="text-s">{worldSales}</div>
           </article>
         )}
 
