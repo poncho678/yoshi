@@ -29,7 +29,7 @@ function Home({ projects, infos }) {
 export async function getStaticProps() {
   const projects = await getClient.fetch(queryAllPosts);
   const infos = await getClient.fetch(queryInfos);
-  console.log(projects);
+
   return {
     props: {
       projects,

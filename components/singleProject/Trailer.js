@@ -6,7 +6,6 @@ const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 function Trailer({ trailer, poster }) {
   const [isLoading, setIsLoading] = useState(true);
-  console.log(poster.asset);
 
   const isLoaded = () => {
     setIsLoading(false);

@@ -8,8 +8,6 @@ function ProjectlistItem({ data, index }) {
   const { title, featuredImage, synopsis, slug, runtime, releaseDate } = data;
   index = index < 10 ? `0${index + 1}` : index + 1;
 
-  console.log(featuredImage);
-
   return (
     <article className={styles.projectWrapper}>
       <section className={styles.basicInfoWrapper}>

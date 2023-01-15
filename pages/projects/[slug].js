@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "../../styles/SingleProject.module.css";
 import { getClient } from "../../server/sanity.server";
-import Loader from "../../components/Loader";
 
 import {
   queryAllPosts,
