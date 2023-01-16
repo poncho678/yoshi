@@ -1,3 +1,7 @@
+.singleProject {
+  overflow-x: hidden;
+}
+
 .singleProject > section:not(:first-of-type) {
   padding: var(--spacer-l) 0 0 0;
 }
