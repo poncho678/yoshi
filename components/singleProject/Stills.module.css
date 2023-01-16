@@ -2,3 +2,11 @@
   max-width: 1024px;
   margin: 0 auto;
 }
+.stillsWrapper * {
+  outline: 0;
+}
+
+.description {
+  padding-top: 0.5em;
+  text-indent: 0;
+}

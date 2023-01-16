@@ -20,9 +20,11 @@ function Stills({ stills = [] }) {
     <section className={styles.stillsWrapper}>
       <Slider {...settings}>
         {stills.map((still) => {
+          console.log(still);
           return (
             <div key={still._key}>
               <SingleProjectImage image={still} />
+              <p className={styles.description}>{still.description}</p>
             </div>
           );
         })}
