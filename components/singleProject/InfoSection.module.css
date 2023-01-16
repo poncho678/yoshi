@@ -1,7 +1,7 @@
 .infoSection {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  grid-template-rows: repeat(6, auto); /* NEW */
+  grid-template-rows: repeat(8, auto); /* NEW */
   grid-auto-flow: dense;
   gap: var(--spacer-m);
   margin-top: var(--spacer-m);
