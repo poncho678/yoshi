@@ -1,6 +1,7 @@
 .infoSection {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  grid-template-rows: repeat(6, auto); /* NEW */
   grid-auto-flow: dense;
   gap: var(--spacer-m);
   margin-top: var(--spacer-m);
@@ -13,9 +14,7 @@
 
 .posterWrapper {
   grid-column: span 2;
-  grid-row: 1 / span 8;
-}
-.posterWrapper img {
+  grid-row: 1 / -1;
 }
 
 .itemWrapper {
