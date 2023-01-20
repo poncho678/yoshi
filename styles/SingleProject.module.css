@@ -1,5 +1,5 @@
 .singleProject {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .singleProject > section:not(:first-of-type) {

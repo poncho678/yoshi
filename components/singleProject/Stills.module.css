@@ -1,6 +1,7 @@
 .stillsWrapper {
   max-width: 1024px;
   margin: 0 auto;
+  padding-bottom: var(--spacer-xl);
 }
 .stillsWrapper * {
   outline: 0;

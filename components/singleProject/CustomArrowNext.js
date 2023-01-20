@@ -7,9 +7,7 @@ function CustomArrowNext(props) {
       className={className}
       style={{ ...style, color: "#000000", fontSize: "2rem" }}
       onClick={onClick}
-    >
-      &#8226;
-    </div>
+    ></div>
   );
 }
 
