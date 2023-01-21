@@ -201,6 +201,28 @@ hr {
   top: 0;
 }
 
+.slick-track {
+  display: flex !important;
+  max-height: 50vh;
+}
+
+.slick-track div:not(.slick-slide) {
+  height: 100%;
+}
+
+.slick-slide {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+}
+
+.slick-slide img {
+  height: 100% !important;
+  width: auto !important;
+}
+
 .slick-next::before,
 .slick-prev::before {
   content: "\2022";

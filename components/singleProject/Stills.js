@@ -4,8 +4,10 @@ import styles from "./Stills.module.css";
 
 function Stills({ stills = [] }) {
   const settings = {
+    className: "slider variable-width",
     dots: false,
     infinite: true,
+    variableWidth: true,
     speed: 0,
   };
   if (stills === null || stills.length === 0) {
@@ -16,7 +18,7 @@ function Stills({ stills = [] }) {
     <section className={styles.stillsWrapper}>
       <Slider {...settings}>
         {stills.map((still) => {
-          console.log(still);
+          console.log(still.asset.metadata.dimensions.width);
           return (
             <div key={still._key}>
               <SingleProjectImage image={still} />
