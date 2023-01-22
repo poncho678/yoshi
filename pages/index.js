@@ -34,7 +34,7 @@ export async function getStaticProps() {
     props: {
       projects,
       infos: infos[0],
-      revalidate: 60 * 5,
+      revalidate: 60,
     },
   };
 }

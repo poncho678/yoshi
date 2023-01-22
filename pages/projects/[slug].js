@@ -68,7 +68,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 }
 
@@ -81,7 +81,7 @@ export async function getStaticProps(context) {
     props: {
       infos: infos[0],
       project: project[0],
-      revalidate: 60 * 5,
+      revalidate: 60,
     },
   };
 }
