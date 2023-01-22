@@ -215,7 +215,7 @@ hr {
   align-items: center;
   justify-content: center;
   height: auto;
-  width: auto;
+  width: 100%;
 }
 
 .slick-slide img {
