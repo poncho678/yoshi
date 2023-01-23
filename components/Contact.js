@@ -3,7 +3,6 @@ import styles from "./Contact.module.css";
 
 function Contact({ infos }) {
   const { mail, contact } = infos;
-  console.log(contact);
   return (
     <section id="contact" className={styles.contactWrapper}>
       <section>
