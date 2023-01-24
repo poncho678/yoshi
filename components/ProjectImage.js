@@ -8,7 +8,6 @@ function ProjectImage({ image }) {
   const [isLoading, setIsLoading] = useState(true);
 
   const Loaded = () => {
-    console.log("image loaded");
     setIsLoading(false);
   };
 

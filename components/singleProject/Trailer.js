@@ -10,7 +10,6 @@ function Trailer({ trailer, poster }) {
   const isLoaded = () => {
     setIsLoading(false);
   };
-  console.log("trailer", isLoading && "whatever");
   return (
     <>
       {trailer && (

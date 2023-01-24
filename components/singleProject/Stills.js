@@ -18,7 +18,6 @@ function Stills({ stills = [] }) {
     <section className={styles.stillsWrapper}>
       <Slider {...settings}>
         {stills.map((still) => {
-          console.log(still.asset.metadata.dimensions.width);
           return (
             <div key={still._key}>
               <SingleProjectImage image={still} />

@@ -7,7 +7,6 @@ import styles from "./SingleProjectImage.module.css";
 function SingleProjectImage({ image }) {
   const [isLoading, setIsLoading] = useState(true);
   const Loaded = () => {
-    console.log("image loaded");
     setIsLoading(false);
   };
   if (!image.asset) {
