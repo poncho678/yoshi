@@ -29,7 +29,7 @@ function Project({ project, infos }) {
         </title>
         <meta name="description" content={infos.siteDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content={title} key="title" />
         <link
           rel="stylesheet"
           type="text/css"
