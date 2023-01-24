@@ -1,0 +1,32 @@
+@keyframes loadingAnimation {
+  0% {
+    background-color: var(--color-text);
+    transform: rotateY(0deg);
+  }
+  50% {
+    background-color: rgb(var(--color-link));
+    transform: rotateY(180deg);
+  }
+  100% {
+    background-color: var(--color-text);
+    transform: rotateY(360deg);
+  }
+}
+
+.loader {
+  opacity: 0;
+  width: var(--spacer-m);
+  height: var(--spacer-m);
+  background-color: var(--color-text);
+  border-radius: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.loader.loading {
+  opacity: 1;
+  animation: loadingAnimation 2s infinite;
+}

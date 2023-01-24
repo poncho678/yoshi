@@ -10,7 +10,7 @@ function Trailer({ trailer, poster }) {
   const isLoaded = () => {
     setIsLoading(false);
   };
-
+  console.log("trailer", isLoading && "whatever");
   return (
     <>
       {trailer && (
@@ -20,8 +20,9 @@ function Trailer({ trailer, poster }) {
               isLoading ? "" : styles.loaded
             }`}
           >
-            {isLoading && <Loader />}
+            <Loader loading={isLoading} />
             <ReactPlayer
+              className={`${styles.trailer} ${isLoading ? styles.loaded : ""}`}
               url={trailer}
               controls={true}
               onReady={isLoaded}
