@@ -1,0 +1,22 @@
+.curriculumVitae h1 {
+  padding-bottom: var(--spacer-m);
+}
+
+.listWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacer-m);
+}
+
+.listWrapper h3 {
+  padding-bottom: var(--spacer-s);
+}
+
+.listItem {
+  balign-self: flex-start;
+  border-top: var(--line-weight) solid var(--color-text);
+  padding: var(--spacer-s) 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: var(--spacer-s);
+}

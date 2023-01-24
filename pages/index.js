@@ -6,6 +6,7 @@ import { getClient } from "../server/sanity.server";
 import { queryAllPosts, queryInfos } from "../server/sanity.queries";
 import Contact from "../components/Contact";
 import Biography from "../components/Biography";
+import CurriculumVitae from "../components/CurriculumVitae";
 
 function Home({ projects, infos }) {
   return (
@@ -19,6 +20,7 @@ function Home({ projects, infos }) {
       <main className={styles.main}>
         <Biography biography={infos} />
         <Projectlist projects={projects} />
+        <CurriculumVitae infos={infos} />
         <Contact infos={infos} />
       </main>
     </>
