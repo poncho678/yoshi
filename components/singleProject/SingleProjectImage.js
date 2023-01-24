@@ -1,22 +1,34 @@
 import Image from "next/image";
+import { useState } from "react";
 import { urlFor } from "../../server/sanity.server";
+import Loader from "../Loader";
+import styles from "./SingleProjectImage.module.css";
 
 function SingleProjectImage({ image }) {
+  const [isLoading, setIsLoading] = useState(true);
+  const Loaded = () => {
+    console.log("image loaded");
+    setIsLoading(false);
+  };
   if (!image.asset) {
     return;
   }
 
   return (
-    <Image
-      src={urlFor(image).url()}
-      blurDataURL={image.asset.metadata.lqip}
-      placeholder="blur"
-      alt={image.description ? image.description : ""}
-      width="0"
-      height="0"
-      sizes="100vw"
-      style={{ width: "100%", height: "auto" }}
-    />
+    <div className={styles.imageWrapper}>
+      {isLoading && <Loader loading={isLoading} />}
+      <Image
+        src={urlFor(image).url()}
+        blurDataURL={image.asset.metadata.lqip}
+        placeholder="blur"
+        alt={image.description ? image.description : ""}
+        width="0"
+        height="0"
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+        onLoadingComplete={Loaded}
+      />
+    </div>
   );
 }
 

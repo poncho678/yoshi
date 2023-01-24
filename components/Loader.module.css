@@ -1,15 +1,15 @@
 @keyframes loadingAnimation {
   0% {
     background-color: var(--color-text);
-    transform: rotateY(0deg);
+    transform: rotateY(0deg) translate(-50%, -50%);
   }
   50% {
     background-color: rgb(var(--color-link));
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translate(-50%, -50%);
   }
   100% {
     background-color: var(--color-text);
-    transform: rotateY(360deg);
+    transform: rotateY(360deg) translate(-50%, -50%);
   }
 }
 
@@ -22,8 +22,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 5;
+  transform-origin: left;
 }
 
 .loader.loading {
