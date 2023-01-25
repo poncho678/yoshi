@@ -3,7 +3,7 @@ import { PortableText } from "@portabletext/react";
 
 function Biography({ biography }) {
   return (
-    <section className={`text-l ${styles.biography}`}>
+    <section id="about" className={`text-l ${styles.about}`}>
       <PortableText value={biography?.bio} />
     </section>
   );

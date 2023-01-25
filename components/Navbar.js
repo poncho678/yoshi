@@ -18,14 +18,14 @@ function Navbar() {
         </li>
         <li>
           {" "}
-          <Link className="btn" href="/#work">
+          <Link className="btn" href="/#work" scroll={false}>
             Work
           </Link>
         </li>
         {/* <li>Bio</li> */}
         <li>
           {" "}
-          <Link className="btn" href="/#contact">
+          <Link className="btn" href="/#contact" scroll={false}>
             Contact
           </Link>
         </li>
