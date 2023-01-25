@@ -1,14 +1,14 @@
-import React from "react";
+import { useSwiper } from "swiper/react";
+import styles from "./CustomArrowNext.module.css";
 
-function CustomArrowNext(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, color: "#000000", fontSize: "2rem" }}
-      onClick={onClick}
-    ></div>
-  );
+function CustomArrowNext() {
+  const swiper = useSwiper();
+
+  const slideNext = () => {
+    swiper.slideNext();
+  };
+
+  return <div onClick={slideNext} className={styles.arrowNext}></div>;
 }
 
 export default CustomArrowNext;

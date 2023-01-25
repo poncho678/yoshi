@@ -1,31 +1,37 @@
+import { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import SingleProjectImage from "./SingleProjectImage";
-import Slider from "react-slick";
+
 import styles from "./Stills.module.css";
+import "swiper/css/navigation";
+import CustomArrowNext from "./CustomArrowNext";
+import CustomArrowPrev from "./CustomArrowPrev";
 
 function Stills({ stills = [] }) {
-  const settings = {
-    className: "slider variable-width",
-    dots: false,
-    infinite: true,
-    variableWidth: true,
-    speed: 0,
-  };
   if (stills === null || stills.length === 0) {
     return;
   }
 
   return (
-    <section className={styles.stillsWrapper}>
-      <Slider {...settings}>
+    <section className={styles.slideshowWrapper}>
+      <Swiper
+        modules={[Navigation]}
+        loop={true}
+        centeredSlides={true}
+        slidesPerView={1}
+      >
+        <CustomArrowNext />
+        <CustomArrowPrev />
         {stills.map((still) => {
           return (
-            <div key={still._key}>
+            <SwiperSlide key={still._key}>
               <SingleProjectImage image={still} />
               <p className={styles.description}>{still.description}</p>
-            </div>
+            </SwiperSlide>
           );
         })}
-      </Slider>
+      </Swiper>
     </section>
   );
 }

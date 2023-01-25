@@ -1,0 +1,24 @@
+.arrowPrev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 100%;
+  width: 15%;
+}
+
+.arrowPrev:hover {
+  cursor: pointer;
+}
+
+.arrowPrev::before,
+.arrowPrev::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  content: "\2022";
+  color: var(--color-text);
+  opacity: 1;
+  font-size: var(--font-size-l);
+  transform: translateY(-50%);
+}
