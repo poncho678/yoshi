@@ -1,7 +1,7 @@
 .arrowPrev {
   position: absolute;
   top: 0;
-  left: 0;
+  left: calc(var(--spacer-m) * -1);
   z-index: 5;
   height: 100%;
   width: 15%;
@@ -16,9 +16,11 @@
   position: absolute;
   left: 0;
   top: 50%;
+  width: var(--spacer-m);
   content: "\2022";
   color: var(--color-text);
   opacity: 1;
   font-size: var(--font-size-l);
   transform: translateY(-50%);
+  text-align: center;
 }

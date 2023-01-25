@@ -20,4 +20,5 @@
 
 .slideshowWrapper > div {
   height: 100%;
+  position: unset;
 }
