@@ -2,7 +2,6 @@ import styles from "./CurriculumVitae.module.css";
 
 function CurriculumVitae({ infos }) {
   const { curriculumVitae } = infos;
-  console.log(curriculumVitae);
 
   if (!curriculumVitae) {
     return;
