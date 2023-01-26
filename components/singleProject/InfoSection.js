@@ -1,7 +1,7 @@
 import styles from "./InfoSection.module.css";
 import { returnYear } from "../../utils/helper";
-import SingleProjectImage from "./SingleProjectImage";
 import { PortableText } from "@portabletext/react";
+import Poster from "./Poster";
 
 function InfoSection({ project }) {
   const {
@@ -33,7 +33,7 @@ function InfoSection({ project }) {
         )}
         {poster.asset && (
           <article className={styles.posterWrapper}>
-            <SingleProjectImage image={poster} />
+            <Poster image={poster} />
           </article>
         )}
         {returnYear(releaseDate) && (
