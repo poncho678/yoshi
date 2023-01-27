@@ -15,8 +15,9 @@ const handler = async (req, res) => {
     const { slug } = req.body;
     console.log(slug);
     await res.revalidate(`/projects/${slug}`);
-    await res.revalidate("/");
-    return res.status(200).json({ msg: "Project Revalidated" });
+    await res.revalidate(`/`);
+    // return res.status(200).json({ msg: "Project Revalidated" });
+    return res.json({ revalidated: true });
   } catch (error) {
     res.status(500).json({ err: "Something broke.." });
   }
