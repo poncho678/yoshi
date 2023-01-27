@@ -70,8 +70,8 @@ export async function getStaticProps(context) {
     props: {
       infos: infos[0],
       project: project[0],
-      revalidate: 60,
     },
+    revalidate: 60,
   };
 }
 
