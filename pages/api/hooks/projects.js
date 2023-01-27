@@ -13,9 +13,10 @@ const handler = async (req, res) => {
       return res.status(401).json({ msg: "Invalid Request" });
     }
     const { slug } = req.body;
+    console.log("query", req.query);
     console.log("newslug", slug);
     await res.revalidate(req.query.path);
-    // await res.revalidate(`/`);
+    await res.revalidate(`/`);
     return res.status(200).json({ msg: "Project Revalidated" });
   } catch (error) {
     console.log(error);
