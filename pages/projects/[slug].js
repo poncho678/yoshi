@@ -20,13 +20,10 @@ function Project({ project, infos }) {
     trailer = "",
     stills = [],
   } = project;
-
   return (
     <>
       <Head>
-        <title>
-          {infos.siteName} | {title}
-        </title>
+        <title>{title.length && `${infos.siteName} | ${title}`}</title>
         <meta name="description" content={infos.siteDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content={title} key="title" />
