@@ -13,6 +13,7 @@ const handler = async (req, res) => {
       return res.status(401).json({ msg: "Invalid Request" });
     }
     const { slug } = req.body;
+    console.log(slug);
     await res.revalidate(`/projects/${slug}`);
     await res.revalidate("/");
     return res.status(200).json({ msg: "Project Revalidated" });
