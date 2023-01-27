@@ -71,7 +71,7 @@ export async function getStaticProps(context) {
       infos: infos[0],
       project: project[0],
     },
-    revalidate: 60,
+    revalidate: 10,
   };
 }
 
