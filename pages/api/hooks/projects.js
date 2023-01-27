@@ -19,6 +19,7 @@ const handler = async (req, res) => {
     // return res.status(200).json({ msg: "Project Revalidated" });
     return res.json({ revalidated: true });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ err: "Something broke.." });
   }
 };
