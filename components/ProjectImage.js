@@ -19,6 +19,7 @@ function ProjectImage({ image }) {
     <>
       {isLoading && <Loader loading={true} />}
       <Image
+        className={`${styles.projectImage} ${isLoading && styles.loaded}`}
         blurDataURL={image.asset.metadata.lqip}
         placeholder="blur"
         src={urlFor(image).url()}
