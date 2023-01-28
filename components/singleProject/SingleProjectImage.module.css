@@ -6,6 +6,8 @@
   align-items: center;
 }
 
-.imageWrapper img {
-  max-width: 1024px;
+@media (min-width: 1280px) {
+  .imageWrapper img {
+    max-width: 75%;
+  }
 }

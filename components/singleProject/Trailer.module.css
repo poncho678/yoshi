@@ -1,9 +1,14 @@
 .videoContainer {
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 1024px;
   margin: 0 auto;
 }
+@media (min-width: 1280px) {
+  .videoContainer {
+    max-width: 75%;
+  }
+}
+
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%;
