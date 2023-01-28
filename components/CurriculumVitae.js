@@ -24,7 +24,7 @@ function CurriculumVitae({ infos }) {
                 {listItems.map((listItem) => {
                   const { _key, year, content } = listItem;
                   return (
-                    <div key={_key} className={styles.listItem}>
+                    <div key={_key} className={`${styles.listItem} text-s`}>
                       <div>{year}</div>
                       <div>{content}</div>
                     </div>

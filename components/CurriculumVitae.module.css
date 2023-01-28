@@ -9,7 +9,7 @@
 }
 @media (min-width: 920px) {
   .listWrapper {
-    grid-template-columns: repeat(auto-fit, minmax(350, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   }
 }
 
