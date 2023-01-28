@@ -27,7 +27,7 @@ function InfoSection({ project }) {
         )}
         {client && (
           <article className={styles.itemWrapper}>
-            <h4>Client</h4>
+            <h4>Broadcaster</h4>
             <div className="text-s">{client}</div>
           </article>
         )}
