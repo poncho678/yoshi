@@ -11,7 +11,7 @@
   --font-size-xs: 0.75rem;
   --font-size-s: calc(0.75rem + 0.35vw);
   --font-size-m: calc(1rem + 1.5vw);
-  --font-size-ml: calc(1rem + 1.5vw);
+  --font-size-ml: calc(1rem + 3vw);
   --font-size-l: calc(1rem + 1.5vw);
   --font-size-xl: calc(1rem + 9vw);
 
