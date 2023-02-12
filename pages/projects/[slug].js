@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../../styles/SingleProject.module.css";
 import { getClient } from "../../server/sanity.server";
+import { toPlainText } from "@portabletext/react";
 
 import {
   queryAllPosts,
@@ -24,7 +25,7 @@ function Project({ project, infos }) {
     <>
       <Head>
         <title>{title.length && `${infos.siteName} | ${title}`}</title>
-        <meta name="description" content={infos.siteDescription} />
+        <meta name="description" content={toPlainText(synopsis)} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content={title} key="title" />
       </Head>
