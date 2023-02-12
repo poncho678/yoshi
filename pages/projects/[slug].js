@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../../styles/SingleProject.module.css";
-import { getClient } from "../../server/sanity.server";
+import { getClient, urlFor } from "../../server/sanity.server";
 import { toPlainText } from "@portabletext/react";
 
 import {
@@ -21,6 +21,7 @@ function Project({ project, infos }) {
     trailer = "",
     stills = [],
   } = project;
+
   return (
     <>
       <Head>
@@ -28,6 +29,11 @@ function Project({ project, infos }) {
         <meta name="description" content={toPlainText(synopsis)} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content={title} key="title" />
+        <meta
+          property="og:image"
+          content={urlFor(featuredImage).url()}
+          key="title"
+        />
       </Head>
 
       <main className={styles.singleProject}>
