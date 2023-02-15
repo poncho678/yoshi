@@ -5,7 +5,8 @@ import ProjectImage from "./ProjectImage";
 import { returnYear } from "../utils/helper";
 
 function ProjectlistItem({ data, index }) {
-  const { title, featuredImage, synopsis, slug, runtime, releaseDate } = data;
+  const { title, featuredImage, synopsis, slug, runtime, role, releaseDate } =
+    data;
   index = index < 10 ? `0${index + 1}` : index + 1;
 
   return (
@@ -18,6 +19,7 @@ function ProjectlistItem({ data, index }) {
               <Link href={`/projects/${slug.current}`}>{title}</Link>
             </h2>
             <h4 className={styles.yearAndDate}>
+              {role && `${role}${(returnYear(releaseDate) || runtime) && ", "}`}
               {returnYear(releaseDate)}
               {returnYear(releaseDate) && runtime && ", "}
               {runtime}
